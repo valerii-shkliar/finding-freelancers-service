@@ -112,7 +112,7 @@ header {
   }
 }
 main {
-  .main-banner {
+  section.main-banner {
     background-color: $backgroundColorSoft;
     padding-top: 32px;
     margin-bottom: 32px;
@@ -192,6 +192,7 @@ main {
     }
   }
   section.start-find-job {
+    margin-bottom: 120px;
     .wrapper {
       .companies-logos-box {
         margin-bottom: 66px;
@@ -356,6 +357,90 @@ main {
                 transform: scale(120%);
               }
             }
+          }
+        }
+      }
+    }
+  }
+  section.why-choose-us {
+    .wrapper {
+      .flex-box {
+        @include flex_verticalAlign(center);
+        flex-direction: column;
+
+        .title {
+          font-family: 'Oswald-Regular';
+          font-size: 40px;
+          letter-spacing: 0.05em;
+          color: $darkTextColor;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        .text {
+          color: $lightGrayTextColor;
+          line-height: 171%;
+          letter-spacing: 0.02em;
+          margin-bottom: 60px;
+          text-align: center;
+          max-width: 543px;
+        }
+      }
+      .cards-box {
+        @include flex_horizonAlign(justify-content);
+        gap: 30px;
+
+        article.card {
+          background-color: #fff;
+          border: initial;
+          border-radius: 20px;
+          padding: 40px 37px 34px;
+          box-shadow: -1px 1px 20px 0 rgba(127, 127, 127, 0.1);
+          cursor: pointer;
+          transition: 0.4s;
+
+          .icon-box {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 22px;
+            border-radius: 7px;
+            @include flex_AlignBooth(center, center);
+
+            .icon {
+              width: 34px;
+              height: 34px;
+            }
+          }
+          .title {
+            font-family: 'Open Sans-SemiBold';
+            font-size: 20px;
+            letter-spacing: 0.02em;
+            color: #323232;
+          }
+          .text {
+            line-height: 157%;
+            letter-spacing: 0.02em;
+            color: #8f8f8f;
+          }
+          &:nth-child(1) {
+            .icon-box {
+              background-color: #6156dc;
+            }
+          }
+          &:nth-child(2) {
+            .icon-box {
+              background-color: #ef6010;
+            }
+          }
+          &:nth-child(3) {
+            .icon-box {
+              background-color: #a73eed;
+            }
+          }
+
+          &:hover {
+            box-shadow: 0 12px 30px 0 rgba(71, 71, 71, 0.15);
+            transform: translateY(-15px);
+            background-color: $backgroundColorExtraSoft;
           }
         }
       }
