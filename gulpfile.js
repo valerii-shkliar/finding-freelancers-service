@@ -19,7 +19,7 @@ function copyIMGTask() {
 }
 
 function copyJSTask() {
-  return src('./src/js/*.js')
+  return src(['./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', './src/js/*.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
     .pipe(uglify())
@@ -28,7 +28,7 @@ function copyJSTask() {
 }
 
 function copyCSSTask() {
-  return src('./src/scss/**/*.scss')
+  return src(['./node_modules/bootstrap/dist/css/bootstrap.min.css', './src/scss/**/*.scss'])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('style.css'))
