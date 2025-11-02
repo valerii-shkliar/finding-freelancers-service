@@ -1,6 +1,6 @@
 @use 'reset';
-@use 'fonts';
-@use 'variables';
+@use 'fonts' as *;
+@use 'variables' as *;
 
 html {
   font-size: 14px;
@@ -8,11 +8,107 @@ html {
   // font-family: $primaryFontRegular;
 }
 .wrapper {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
 
   // @media screen and (max-width: 360px) {
   //   padding-left: 16px;
   //   padding-right: 16px;
   // }
+}
+
+header {
+  background-color: $backgroundColorSoft;
+  padding: 23px 0px;
+
+  .wrapper {
+    @include flex_horizonAlign(space-between);
+
+    .logo-box {
+      @include flex_verticalAlign(center);
+      gap: 4px;
+
+      .logo-image {
+      }
+      .logo-title {
+        font-family: 'odibee_sans-regular';
+        font-size: 29px;
+        color: #272626;
+      }
+    }
+    .nav-bar {
+      @include flex_verticalAlign(center);
+
+      ul.menu-container {
+        display: flex;
+        gap: 34px;
+        li {
+          .menu-item {
+            font-family: 'Open Sans-Regular';
+            color: $extraDarkTextColor;
+            transition: 0.3s;
+
+            &:hover {
+              color: $violetTextColor;
+            }
+          }
+        }
+      }
+    }
+    .tools-box {
+      @include flex_verticalAlign(center);
+      gap: 26px;
+
+      .search-box {
+        position: relative;
+
+        .search-input {
+          font-family: 'Open Sans-Regular';
+          border-radius: 50px;
+          padding: 10px 20px;
+          background-color: white;
+          width: 307px;
+          caret-color: #a5a5a5;
+
+          &::placeholder {
+            font-family: 'Open Sans-Regular';
+            color: #a5a5a5;
+          }
+        }
+        .search-btn {
+          background-color: rgba(192, 194, 248, 0.22);
+          width: 28px;
+          height: 28px;
+          border-radius: 50px;
+          background-image: url('./../img/icons/search.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          position: absolute;
+          top: calc(50% - 28px / 2);
+          right: 7px;
+          transition: 0.4s;
+
+          &:hover {
+            transform: scale(115%);
+          }
+        }
+      }
+      .auth-box {
+        .sign-in,
+        .sign-up {
+          color: $extraDarkTextColor;
+          font-family: 'Open Sans-Regular';
+          transition: 0.3s;
+
+          &:hover {
+            color: $violetTextColor;
+          }
+        }
+        .symbol {
+          color: $extraDarkTextColor;
+          font-family: 'Open Sans-Regular';
+        }
+      }
+    }
+  }
 }

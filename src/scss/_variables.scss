@@ -2,7 +2,33 @@ $orangeColor: #ff5c00;
 $violetButtonColor: #544cac;
 $violetTextColor: #4238af;
 $darkTextColor: #353434;
+$extraDarkTextColor: #272323;
 $lightGrayTextColor: #a8a8a8;
 $grayTextColor: #959595;
 $backgroundColorSoft: #f5f7ff;
 $backgroundColorExtraSoft: #f9faff;
+
+@mixin flex_verticalAlign($position) {
+  display: flex;
+  align-items: $position;
+}
+@mixin flex_horizonAlign($position) {
+  display: flex;
+  justify-content: $position;
+}
+@mixin flex_AlignBooth($valueX, $valueY) {
+  display: flex;
+  justify-content: $valueX;
+  align-items: $valueY;
+}
+
+@mixin before_after($background-image: false, $width, $height: $width) {
+  content: '';
+  display: inline-block;
+  background-position: center;
+  width: $width;
+  height: $height;
+  @if $background-image {
+    background-image: url($background-image);
+  }
+}

@@ -11,11 +11,11 @@ function copyHTMLTask() {
 }
 
 function copyFontsTask() {
-  return src('./src/fonts/*/*.*').pipe(flatten()).pipe(dest('./dist/fonts/'));
+  return src('./src/fonts/*/*.*', { encoding: false }).pipe(flatten()).pipe(dest('./dist/fonts/'));
 }
 
 function copyIMGTask() {
-  return src('./src/img/**/*.*').pipe(dest('./dist/img'));
+  return src('./src/img/**/*.*', { encoding: false }).pipe(dest('./dist/img'));
 }
 
 function copyJSTask() {
