@@ -1,0 +1,23 @@
+<svg width="0" height="0" class="hidden">
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" id="icon-card-orange">
+    <circle cx="18.35" cy="18.35" r="18.35" fill="white"></circle>
+    <path d="M18.4912 25.5488L10.7277 27.6662C9.73961 27.9485 8.75154 26.9604 9.03385 25.9723L11.1512 18.2088C12.1392 14.8212 14.68 12.1392 18.0677 11.2923L25.8312 9.175C26.8192 8.89269 27.8073 9.88077 27.525 10.8688L25.4077 18.6323C24.5608 21.8788 21.8788 24.5608 18.4912 25.5488Z" fill="#EF6010"></path>
+    <circle cx="9.88" cy="9.88" r="1.41" fill="#EF6010"></circle>
+    <circle cx="26.82" cy="26.82" r="1.41" fill="#EF6010"></circle>
+    <circle cx="18.35" cy="18.35" r="2.825" fill="white"></circle>
+  </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" id="icon-card-purple">
+    <circle cx="18.35" cy="18.35" r="18.35" fill="white"></circle>
+    <path d="M18.4912 25.5488L10.7277 27.6662C9.73961 27.9485 8.75154 26.9604 9.03385 25.9723L11.1512 18.2088C12.1392 14.8212 14.68 12.1392 18.0677 11.2923L25.8312 9.175C26.8192 8.89269 27.8073 9.88077 27.525 10.8688L25.4077 18.6323C24.5608 21.8788 21.8788 24.5608 18.4912 25.5488Z" fill="#A73EED"></path>
+    <circle cx="9.88" cy="9.88" r="1.41" fill="#A73EED"></circle>
+    <circle cx="26.82" cy="26.82" r="1.41" fill="#A73EED"></circle>
+    <circle cx="18.35" cy="18.35" r="2.825" fill="white"></circle>
+  </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" id="icon-card-violet">
+    <circle cx="18.35" cy="18.35" r="18.35" fill="white"></circle>
+    <path d="M18.4912 25.5488L10.7277 27.6662C9.73961 27.9485 8.75154 26.9604 9.03385 25.9723L11.1512 18.2088C12.1392 14.8212 14.68 12.1392 18.0677 11.2923L25.8312 9.175C26.8192 8.89269 27.8073 9.88077 27.525 10.8688L25.4077 18.6323C24.5608 21.8788 21.8788 24.5608 18.4912 25.5488Z" fill="#6156DC"></path>
+    <circle cx="9.88" cy="9.88" r="1.41" fill="#6156DC"></circle>
+    <circle cx="26.82" cy="26.82" r="1.41" fill="#6156DC"></circle>
+    <circle cx="18.35" cy="18.35" r="2.825" fill="white"></circle>
+  </symbol>
+</svg>
