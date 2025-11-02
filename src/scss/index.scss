@@ -5,7 +5,7 @@
 html {
   font-size: 14px;
   font-weight: 400;
-  // font-family: $primaryFontRegular;
+  font-family: 'Open Sans-Regular';
 }
 .wrapper {
   max-width: 1100px;
@@ -28,8 +28,6 @@ header {
       @include flex_verticalAlign(center);
       gap: 4px;
 
-      .logo-image {
-      }
       .logo-title {
         font-family: 'odibee_sans-regular';
         font-size: 29px;
@@ -107,6 +105,87 @@ header {
         .symbol {
           color: $extraDarkTextColor;
           font-family: 'Open Sans-Regular';
+        }
+      }
+    }
+  }
+}
+main {
+  .main-banner {
+    background-color: $backgroundColorSoft;
+    padding-top: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 17px 23px 0 rgba(49, 49, 49, 0.1);
+
+    .wrapper {
+      @include flex_verticalAlign(center);
+
+      .content-box {
+        .title {
+          font-family: 'Prompt-Regular';
+          font-size: 45px;
+          line-height: 122%;
+          color: $darkTextColor;
+          letter-spacing: 0.07em;
+          margin-bottom: 18px;
+
+          span {
+            color: $orangeColor;
+          }
+        }
+        .text {
+          color: $lightGrayTextColor;
+          line-height: 171%;
+          letter-spacing: 0.02em;
+          margin-bottom: 30px;
+        }
+        .buttons-box {
+          display: flex;
+          gap: 29px;
+
+          .discover-btn {
+            font-size: 16px;
+            color: white;
+            letter-spacing: 0.02em;
+            padding: 12px 22px;
+            border-radius: 6px;
+            background-color: $violetButtonColor;
+            box-shadow: 0 4px 23px 0 rgba(49, 49, 49, 0.3);
+            transition: 0.4s;
+
+            &:hover {
+              background-color: #3225c1;
+            }
+          }
+          .watch-btn {
+            color: black;
+            font-size: 16px;
+            border-radius: 6px;
+            padding: 0px 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.4s;
+
+            &:hover {
+              background-color: #ededed;
+            }
+
+            .icon-play {
+              border-radius: 50%;
+              width: 44px;
+              height: 44px;
+              background-color: white;
+              position: relative;
+
+              &::before {
+                @include before_after('./../img/icons/play.svg', 23px, 23px);
+                position: absolute;
+                top: calc(50% - 23px / 2);
+                left: calc(50% - 23px / 2);
+              }
+            }
+          }
         }
       }
     }
