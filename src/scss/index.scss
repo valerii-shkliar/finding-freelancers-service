@@ -436,6 +436,7 @@ main {
   }
   section.featured-jobs {
     position: relative;
+    margin-bottom: 119px;
 
     .header-box {
       @include flex_verticalAlign(center);
@@ -632,6 +633,94 @@ main {
 
         &:hover {
           @include violet-button-hover;
+        }
+      }
+    }
+  }
+  section.pricing-plan {
+    margin-bottom: 122px;
+
+    .wrapper {
+      .header-box {
+        @include flex_verticalAlign(center);
+        flex-direction: column;
+        margin-bottom: 75px;
+
+        .title {
+          @include title-in-header-box;
+        }
+        .text {
+          @include text-in-header-box;
+        }
+      }
+      .cards-box {
+        @include flex_horizonAlign(space-between);
+
+        .card {
+          @include card;
+          max-width: 350px;
+          padding: 62px 65px;
+
+          .title {
+            font-family: 'Open Sans-SemiBold';
+            color: $violetTextColor;
+            letter-spacing: 0.02em;
+            font-size: 20px;
+            margin: 0 auto;
+            margin-bottom: 31px;
+          }
+          .cost {
+            font-family: 'Oswald-Regular';
+            font-size: 45px;
+            color: $darkTextColor;
+            letter-spacing: 0.07em;
+            margin: 0 auto;
+            margin-bottom: 24px;
+          }
+          .period {
+            font-size: 16px;
+            color: #8a86b9;
+            letter-spacing: 0.02em;
+            margin: 0 auto;
+            margin-bottom: 71px;
+          }
+          ul.favours-list {
+            margin-bottom: 47px;
+
+            li {
+              @include flex_verticalAlign(center);
+              margin-bottom: 19px;
+              gap: 11px;
+
+              &:before {
+                @include before_after('./../img/icons/done-filled.svg', 16px, 16px);
+              }
+
+              .favour {
+                color: $lightGrayTextColor;
+                letter-spacing: 0.02em;
+              }
+              &:last-child {
+                margin-bottom: initial;
+              }
+            }
+          }
+          .buttons-box {
+            margin: 0 auto;
+
+            .purchase-btn {
+              @include violet-button;
+              padding: 13px 23px;
+
+              &:hover {
+                @include violet-button-hover;
+              }
+            }
+          }
+          &:hover {
+            @include card-hover;
+            transform: translateY(-30px);
+          }
         }
       }
     }
