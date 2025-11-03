@@ -726,3 +726,112 @@ main {
     }
   }
 }
+footer {
+  background-color: #dbe2ff;
+  border-radius: 30px 30px 0px 0px;
+  padding-top: 110px;
+
+  .wrapper {
+    .footer-menu {
+      @include flex_horizonAlign(space-between);
+      padding-bottom: 98px;
+      border-bottom: 2px solid #625bae;
+
+      .categories-box {
+        .title {
+          font-family: 'Oswald-Regular';
+          color: $darkTextColor;
+          letter-spacing: 0.05em;
+          font-size: 24px;
+          margin-bottom: 28px;
+        }
+        .categories {
+          li {
+            margin-bottom: 20px;
+
+            .categories-item {
+              font-size: 16px;
+              color: #717171;
+              letter-spacing: 0.02em;
+              transition: 0.3s;
+
+              &:hover {
+                color: $violetTextColor;
+              }
+            }
+            &:last-child {
+              margin-bottom: initial;
+            }
+          }
+        }
+      }
+    }
+    .footer-nav-bar {
+      @include flex_AlignBooth(space-between, center);
+      padding-top: 13px;
+      padding-bottom: 13px;
+
+      .logo-box {
+        @include flex_verticalAlign(center);
+        gap: 6px;
+
+        .logo-title {
+          font-family: 'odibee_sans-regular';
+          font-size: 16px;
+          color: #272626;
+        }
+      }
+      .nav-bar-menu {
+        display: flex;
+
+        li {
+          line-height: 217%;
+          width: 130px;
+          text-align: center;
+
+          .nav-bar-item {
+            font-family: 'Open Sans-SemiBold';
+            font-size: 12px;
+            letter-spacing: 0.02em;
+            color: #3a2e5c;
+            transition: 0.4s;
+
+            &:hover {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .social-media-box {
+        display: flex;
+        gap: 8px;
+
+        .social-media-item {
+          display: flex;
+          width: 29px;
+          height: 29px;
+          border-radius: 50%;
+          background-color: #ffffff;
+          cursor: pointer;
+          transition: 0.4s;
+
+          .icon {
+            margin: auto;
+            width: 13px;
+            height: 13px;
+            fill: #979797;
+            transition: 0.4s;
+          }
+
+          &:hover {
+            background-color: rgba(66, 56, 175, 0.81);
+
+            .icon {
+              fill: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
