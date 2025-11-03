@@ -22,6 +22,8 @@
     "sass": "^1.93.3"
   },
   "dependencies": {
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "jquery": "^3.7.1",
+    "slick-carousel": "^1.8.1"
   }
 }

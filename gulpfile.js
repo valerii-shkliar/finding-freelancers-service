@@ -19,7 +19,12 @@ function copyIMGTask() {
 }
 
 function copyJSTask() {
-  return src(['./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', './src/js/*.js'])
+  return src([
+    './node_modules/jquery/dist/jquery.min.js',
+    './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+    './node_modules/slick-carousel/slick/slick.min.js',
+    './src/js/*.js',
+  ])
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
     .pipe(uglify())
@@ -28,7 +33,11 @@ function copyJSTask() {
 }
 
 function copyCSSTask() {
-  return src(['./node_modules/bootstrap/dist/css/bootstrap.min.css', './src/scss/**/*.scss'])
+  return src([
+    './node_modules/bootstrap/dist/css/bootstrap.min.css',
+    // './node_modules/slick-carousel/slick/slick.min.js',
+    './src/scss/**/*.scss',
+  ])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('style.css'))

@@ -85,7 +85,7 @@ header {
           position: absolute;
           top: calc(50% - 28px / 2);
           right: 7px;
-          transition: 0.4s;
+          transition: $button-transition;
 
           &:hover {
             transform: scale(115%);
@@ -152,7 +152,7 @@ main {
             border-radius: 6px;
             background-color: $violetButtonColor;
             box-shadow: 0 4px 23px 0 rgba(49, 49, 49, 0.3);
-            transition: 0.4s;
+            transition: $button-transition;
 
             &:hover {
               background-color: #3225c1;
@@ -166,7 +166,7 @@ main {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            transition: 0.4s;
+            transition: $button-transition;
 
             &:hover {
               background-color: #ededed;
@@ -351,7 +351,7 @@ main {
               position: absolute;
               top: calc(50% - 77px / 2);
               left: calc(50% - 77px / 2);
-              transition: 0.4s;
+              transition: $button-transition;
 
               &:hover {
                 transform: scale(120%);
@@ -363,26 +363,20 @@ main {
     }
   }
   section.why-choose-us {
+    margin-bottom: 120px;
+
     .wrapper {
-      .flex-box {
+      .header-box {
         @include flex_verticalAlign(center);
         flex-direction: column;
 
         .title {
-          font-family: 'Oswald-Regular';
-          font-size: 40px;
-          letter-spacing: 0.05em;
-          color: $darkTextColor;
+          @include title-in-header-box;
           margin-bottom: 20px;
-          text-align: center;
         }
         .text {
-          color: $lightGrayTextColor;
-          line-height: 171%;
-          letter-spacing: 0.02em;
+          @include text-in-header-box;
           margin-bottom: 60px;
-          text-align: center;
-          max-width: 543px;
         }
       }
       .cards-box {
@@ -390,13 +384,8 @@ main {
         gap: 30px;
 
         article.card {
-          background-color: #fff;
-          border: initial;
-          border-radius: 20px;
+          @include card;
           padding: 40px 37px 34px;
-          box-shadow: -1px 1px 20px 0 rgba(127, 127, 127, 0.1);
-          cursor: pointer;
-          transition: 0.4s;
 
           .icon-box {
             width: 60px;
@@ -438,10 +427,211 @@ main {
           }
 
           &:hover {
-            box-shadow: 0 12px 30px 0 rgba(71, 71, 71, 0.15);
+            @include card-hover;
             transform: translateY(-15px);
-            background-color: $backgroundColorExtraSoft;
           }
+        }
+      }
+    }
+  }
+  section.featured-jobs {
+    position: relative;
+
+    .header-box {
+      @include flex_verticalAlign(center);
+      flex-direction: column;
+
+      .title {
+        @include title-in-header-box;
+      }
+      .text {
+        @include text-in-header-box;
+      }
+    }
+
+    .arrows-box {
+      position: absolute;
+      bottom: 200px;
+      left: 69px;
+      z-index: 5;
+      display: flex;
+      gap: 20px;
+
+      .slick-arrow {
+        position: relative;
+        @include flex_AlignBooth(center, center);
+        width: 60px;
+        height: 60px;
+        border-radius: 7px;
+        background-color: $backgroundColorExtraSoft;
+        cursor: pointer;
+        transition: $button-transition;
+
+        .icon {
+          width: 31px;
+          height: 27px;
+          fill: #ef6010;
+          transition: $button-transition;
+        }
+
+        &:hover {
+          background-color: #ef6010;
+
+          .icon {
+            fill: #fff;
+          }
+        }
+      }
+    }
+
+    .slick-slider {
+      padding-top: 80px;
+      padding-bottom: 76px;
+      overflow-x: hidden;
+      padding-left: 260px;
+
+      .slick-list {
+        .slick-track {
+          display: flex;
+          gap: 65px;
+        }
+      }
+
+      .card {
+        @include card;
+        flex-direction: column;
+        align-items: center;
+        padding: 47px 75px;
+        max-width: 380px;
+        cursor: initial;
+
+        .more-box {
+          position: absolute;
+          top: 40px;
+          right: 37px;
+          cursor: pointer;
+          height: 20px;
+          @include flex_verticalAlign(center);
+          transition: 0.4s;
+
+          .more-icon {
+            width: 22px;
+            height: 5px;
+          }
+          &:hover {
+            scale: (120%);
+          }
+        }
+
+        .avatar-box {
+          @include flex_AlignBooth(center, center);
+          width: 83px;
+          height: 83px;
+          border-radius: 50%;
+          background-color: #fea06b;
+          margin-bottom: 41px;
+
+          img.avatar {
+            -webkit-user-drag: none;
+            border-radius: 50%;
+          }
+        }
+        .speciality {
+          font-size: 20px;
+          letter-spacing: 0.02em;
+          color: #323232;
+          margin-bottom: 16px;
+        }
+        .team {
+          color: $violetTextColor;
+          letter-spacing: 0.02em;
+          margin-bottom: 44px;
+        }
+        .conditions-box {
+          margin-bottom: 33px;
+
+          .condition {
+            @include flex_verticalAlign(center);
+
+            .salary,
+            .location {
+              letter-spacing: 0.02em;
+              color: #323232;
+              font-size: 16px;
+              text-wrap: nowrap;
+            }
+            .info {
+              color: #898989;
+              font-size: 14px;
+              letter-spacing: 0.02em;
+              margin-left: auto;
+            }
+
+            &:has(.salary) {
+              margin-bottom: 14px;
+
+              &::before {
+                @include before_after('./../img/icons/money-bag.svg', 15px, 18px);
+                margin-right: 10px;
+              }
+            }
+            &:has(.location) {
+              &::before {
+                @include before_after('./../img/icons/location.svg', 12px, 17px);
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+        .buttons-box {
+          @include flex_verticalAlign(center);
+          gap: 29px;
+
+          .like-btn {
+            @include flex_AlignBooth(center, center);
+            background-color: $backgroundColorExtraSoft;
+            border-radius: 50%;
+            width: 49px;
+            height: 49px;
+            transition: $button-transition;
+
+            .icon {
+              width: 23px;
+              height: 21px;
+              fill: $orangeColor;
+              transition: $button-transition;
+            }
+
+            &:hover {
+              background-color: $orangeColor;
+
+              .icon {
+                fill: #fff;
+              }
+            }
+          }
+          .apply-btn {
+            @include violet-button;
+
+            &:hover {
+              @include violet-button-hover;
+            }
+          }
+        }
+        &:hover {
+          @include card-hover;
+          transform: translateY(-35px);
+        }
+      }
+    }
+    .btn-box {
+      @include flex_horizonAlign(center);
+
+      .apply-btn {
+        @include violet-button;
+
+        &:hover {
+          @include violet-button-hover;
         }
       }
     }
