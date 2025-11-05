@@ -1,3 +1,8 @@
+const customersReviewSelector = 'section.customers-review';
+const prevArrowSelector = '.interaction-box .arrows-box .slick-prev.slick-arrow';
+const nextArrowSelector = '.interaction-box .arrows-box .slick-next.slick-arrow';
+const customersReviewSliderSelector = 'section.customers-review .slick-slider';
+const featuredJobsSliderSelector = 'section.featured-jobs .slick-slider';
 const arrowLeft = `
   <a class="slick-prev">
     <svg class="icon">
@@ -11,9 +16,9 @@ const arrowRight = `
     </svg>
   </a>`;
 
-appendEmptySlide();
+appendEmptySlide(featuredJobsSliderSelector);
 
-$('.slick-slider').slick({
+$(featuredJobsSliderSelector).slick({
   infinite: false,
   slidesToShow: 3,
   slidesToScroll: 1,
@@ -22,6 +27,25 @@ $('.slick-slider').slick({
   nextArrow: arrowRight,
 });
 
-function appendEmptySlide() {
-  $('section.featured-jobs .slick-slider').append('<div></div>');
+function appendEmptySlide(slider) {
+  $(slider).append('<div></div>');
+}
+
+$(customersReviewSliderSelector).slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  appendArrows: $('section.customers-review .interaction-box .arrows-box'),
+  prevArrow: arrowLeft,
+  nextArrow: arrowRight,
+  fade: true,
+});
+$(customersReviewSelector).on('click', prevArrowSelector, onPrevArrowClick);
+$(customersReviewSelector).on('click', nextArrowSelector, onNextArrowClick);
+
+function onPrevArrowClick() {
+  $(customersReviewSliderSelector).slick('slickPrev');
+}
+function onNextArrowClick() {
+  $(customersReviewSliderSelector).slick('slickNext');
 }
