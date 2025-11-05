@@ -819,6 +819,36 @@ main {
       }
     }
   }
+  section.statistics {
+    margin-bottom: 119px;
+
+    .wrapper {
+      .statistics-list {
+        border-radius: 30px;
+        background-color: #ced5f4;
+        padding: 74px 120px;
+        @include flex_AlignBooth(space-between, center);
+
+        .statistic-item {
+          .statistic-quantity {
+            font-family: 'Oswald-Regular';
+            color: #584ec6;
+            font-size: 40px;
+            letter-spacing: 0.02em;
+            margin-bottom: 14px;
+            text-align: center;
+          }
+          .statistic-name {
+            display: block;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+            color: #fff;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
   section.pricing-plan {
     margin-bottom: 122px;
 
